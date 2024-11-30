@@ -1,0 +1,187 @@
+<mujoco model="Skydio X2">
+  <compiler autolimits="true" assetdir="assets"/>
+  <option timestep="0.01" density="1.225" viscosity="1.8e-5"/>
+
+  <default>
+    <default class="x2">
+      <geom mass="0"/>
+      <motor ctrlrange="0 13"/>
+      <mesh scale="0.01 0.01 0.01"/>
+      <default class="visual">
+        <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+      </default>
+      <default class="collision">
+        <geom group="3" type="box"/>
+        <default class="rotor">
+          <geom type="ellipsoid" size=".13 .13 .01"/>
+        </default>
+      </default>
+      <site group="5"/>
+    </default>
+  </default>
+
+
+  <worldbody>
+    
+    <body name="x2_0" pos="0.6 0.6 0.1" childclass="x2">
+      <freejoint/>
+      <camera name="track_0" pos="-1 0 .5" xyaxes="0 -1 0 1 0 2" mode="trackcom"/>
+      <site name="imu_0" pos="0 0 .02"/>
+      <geom name="core_geom_0" type="box" pos="0 0 0.02" quat="1 0 0 0" size=".16 .04 .02" rgba=".3 .3 .8 1" mass=".325"/>
+      <geom name="arm_front_left_0" type="box" pos=".07 .07 0" size=".05 .005 .005" quat=".924 0 0 .383" rgba=".3 .3 .8 1"/>
+      <geom name="arm_front_right_0" type="box" pos=".07 -.07 0" size=".05 .005 .005" quat=".383 0 0 .924" rgba=".3 .3 .8 1"/>
+      <geom name="arm_back_right_0" type="box" pos="-.07 -.07 0" size=".05 .005 .005" quat="-.383 0 0 .924" rgba=".3 .3 .8 1"/>
+      <geom name="arm_back_left_0" type="box" pos="-.07 .07 0" size=".05 .005 .005" quat=".924 0 0 -.383" rgba=".3 .3 .8 1"/>
+      <site name="thrust1_0" type="cylinder" pos="-.14 -.18 .05"/>
+      <site name="thrust2_0" type="cylinder" pos="-.14 .18 .05"/>
+      <site name="thrust3_0" type="cylinder" pos=".14 .18 .08"/>
+      <site name="thrust4_0" type="cylinder" pos=".14 -.18 .08"/>
+      <geom name="thruster_front_left_0" type="cylinder" pos="-.14 -.18 .05" size=".05 .0025" quat="1 0 0 0" rgba=".3 .8 .3 0.6" mass=".25"/>
+      <geom name="thruster_front_right_0" type="cylinder" pos="-.14 .18 .05" size=".05 .0025" quat="1 0 0 0" rgba=".3 .8 .3 0.6" mass=".25"/>
+      <geom name="thruster_back_right_0" type="cylinder" pos=".14 .18 .08" size=".05 .0025" quat="1 0 0 0" rgba=".3 .8 .3 0.6" mass=".25"/>
+      <geom name="thruster_back_left_0" type="cylinder" pos=".14 -.18 .08" size=".05 .0025" quat="1 0 0 0" rgba=".3 .8 .3 0.6" mass=".25"/>
+      <site name="s0" pos="0 0 0" />
+    </body>
+    
+    <body name="x2_1" pos="0.6 -0.6 0.1" childclass="x2">
+     <freejoint/>
+      <camera name="track_1" pos="-1 0 .5" xyaxes="0 -1 0 1 0 2" mode="trackcom"/>
+      <site name="imu_1" pos="0 0 .02"/>
+      <geom name="core_geom_1" type="box" pos="0 0 0.02" quat="1 0 0 0" size=".16 .04 .02" rgba=".3 .3 .8 1" mass=".325"/>
+      <geom name="arm_front_left_1" type="box" pos=".07 .07 0" size=".05 .005 .005" quat=".924 0 0 .383" rgba=".3 .3 .8 1"/>
+      <geom name="arm_front_right_1" type="box" pos=".07 -.07 0" size=".05 .005 .005" quat=".383 0 0 .924" rgba=".3 .3 .8 1"/>
+      <geom name="arm_back_right_1" type="box" pos="-.07 -.07 0" size=".05 .005 .005" quat="-.383 0 0 .924" rgba=".3 .3 .8 1"/>
+      <geom name="arm_back_left_1" type="box" pos="-.07 .07 0" size=".05 .005 .005" quat=".924 0 0 -.383" rgba=".3 .3 .8 1"/>
+      <site name="thrust1_1" type="cylinder" pos="-.14 -.18 .05"/>
+      <site name="thrust2_1" type="cylinder" pos="-.14 .18 .05"/>
+      <site name="thrust3_1" type="cylinder" pos=".14 .18 .08"/>
+      <site name="thrust4_1" type="cylinder" pos=".14 -.18 .08"/>
+      <geom name="thruster_front_left_1" type="cylinder" pos="-.14 -.18 .05" size=".05 .0025" quat="1 0 0 0" rgba=".3 .8 .3 0.6" mass=".25"/>
+      <geom name="thruster_front_right_1" type="cylinder" pos="-.14 .18 .05" size=".05 .0025" quat="1 0 0 0" rgba=".3 .8 .3 0.6" mass=".25"/>
+      <geom name="thruster_back_right_1" type="cylinder" pos=".14 .18 .08" size=".05 .0025" quat="1 0 0 0" rgba=".3 .8 .3 0.6" mass=".25"/>
+      <geom name="thruster_back_left_1" type="cylinder" pos=".14 -.18 .08" size=".05 .0025" quat="1 0 0 0" rgba=".3 .8 .3 0.6" mass=".25"/>
+      <site name="s1" pos="0 0 0" />
+    </body>
+    
+    <body name="x2_2" pos="-0.6 0.6 0.1" childclass="x2">
+     <freejoint/>
+      <camera name="track_2" pos="-1 0 .5" xyaxes="0 -1 0 1 0 2" mode="trackcom"/>
+      <site name="imu_2" pos="0 0 .02"/>
+      <geom name="core_geom_2" type="box" pos="0 0 0.02" quat="1 0 0 0" size=".16 .04 .02" rgba=".3 .3 .8 1" mass=".325"/>
+      <geom name="arm_front_left_2" type="box" pos=".07 .07 0" size=".05 .005 .005" quat=".924 0 0 .383" rgba=".3 .3 .8 1"/>
+      <geom name="arm_front_right_2" type="box" pos=".07 -.07 0" size=".05 .005 .005" quat=".383 0 0 .924" rgba=".3 .3 .8 1"/>
+      <geom name="arm_back_right_2" type="box" pos="-.07 -.07 0" size=".05 .005 .005" quat="-.383 0 0 .924" rgba=".3 .3 .8 1"/>
+      <geom name="arm_back_left_2" type="box" pos="-.07 .07 0" size=".05 .005 .005" quat=".924 0 0 -.383" rgba=".3 .3 .8 1"/>
+      <site name="thrust1_2" type="cylinder" pos="-.14 -.18 .05"/>
+      <site name="thrust2_2" type="cylinder" pos="-.14 .18 .05"/>
+      <site name="thrust3_2" type="cylinder" pos=".14 .18 .08"/>
+      <site name="thrust4_2" type="cylinder" pos=".14 -.18 .08"/>
+      <geom name="thruster_front_left_2" type="cylinder" pos="-.14 -.18 .05" size=".05 .0025" quat="1 0 0 0" rgba=".3 .8 .3 0.6" mass=".25"/>
+      <geom name="thruster_front_right_2" type="cylinder" pos="-.14 .18 .05" size=".05 .0025" quat="1 0 0 0" rgba=".3 .8 .3 0.6" mass=".25"/>
+      <geom name="thruster_back_right_2" type="cylinder" pos=".14 .18 .08" size=".05 .0025" quat="1 0 0 0" rgba=".3 .8 .3 0.6" mass=".25"/>
+      <geom name="thruster_back_left_2" type="cylinder" pos=".14 -.18 .08" size=".05 .0025" quat="1 0 0 0" rgba=".3 .8 .3 0.6" mass=".25"/>
+      <site name="s2" pos="0 0 0" />
+    </body>
+    
+    <body name="x2_3" pos="-0.6 -0.6 0.1" childclass="x2">
+     <freejoint/>
+      <camera name="track_3" pos="-1 0 .5" xyaxes="0 -1 0 1 0 2" mode="trackcom"/>
+      <site name="imu_3" pos="0 0 .02"/>
+      <geom name="core_geom_3" type="box" pos="0 0 0.02" quat="1 0 0 0" size=".16 .04 .02" rgba=".3 .3 .8 1" mass=".325"/>
+      <geom name="arm_front_left_3" type="box" pos=".07 .07 0" size=".05 .005 .005" quat=".924 0 0 .383" rgba=".3 .3 .8 1"/>
+      <geom name="arm_front_right_3" type="box" pos=".07 -.07 0" size=".05 .005 .005" quat=".383 0 0 .924" rgba=".3 .3 .8 1"/>
+      <geom name="arm_back_right_3" type="box" pos="-.07 -.07 0" size=".05 .005 .005" quat="-.383 0 0 .924" rgba=".3 .3 .8 1"/>
+      <geom name="arm_back_left_3" type="box" pos="-.07 .07 0" size=".05 .005 .005" quat=".924 0 0 -.383" rgba=".3 .3 .8 1"/>
+      <site name="thrust1_3" type="cylinder" pos="-.14 -.18 .05"/>
+      <site name="thrust2_3" type="cylinder" pos="-.14 .18 .05"/>
+      <site name="thrust3_3" type="cylinder" pos=".14 .18 .08"/>
+      <site name="thrust4_3" type="cylinder" pos=".14 -.18 .08"/>
+      <geom name="thruster_front_left_3" type="cylinder" pos="-.14 -.18 .05" size=".05 .0025" quat="1 0 0 0" rgba=".3 .8 .3 0.6" mass=".25"/>
+      <geom name="thruster_front_right_3" type="cylinder" pos="-.14 .18 .05" size=".05 .0025" quat="1 0 0 0" rgba=".3 .8 .3 0.6" mass=".25"/>
+      <geom name="thruster_back_right_3" type="cylinder" pos=".14 .18 .08" size=".05 .0025" quat="1 0 0 0" rgba=".3 .8 .3 0.6" mass=".25"/>
+      <geom name="thruster_back_left_3" type="cylinder" pos=".14 -.18 .08" size=".05 .0025" quat="1 0 0 0" rgba=".3 .8 .3 0.6" mass=".25"/>
+      <site name="s3" pos="0 0 0" />
+    </body>
+    
+   <body name="load" pos="0 0 0.1625">
+      <freejoint/>
+      <geom name="load" pos="0 0 0" rgba="0.8 0.8 0.1 1" size="0.3525 0.3525 0.325" type="box" mass="0.25"/>
+      <site name="load_3" pos="-0.115 -0.09 0.1625" />
+      <site name="load_1" pos="0.115 -0.09 0.1625" />
+      <site name="load_0" pos="0.115 0.09 0.1625" />
+      <site name="load_2" pos="-0.115 0.09 0.1625" />
+      </body>
+
+  </worldbody>
+  
+   <tendon>
+        <spatial name="rope0" width="0.002"  range="0.0 2.1" limited="true">
+            <site site="load_0" />
+            <site site="s0" />
+        </spatial>
+    </tendon>
+     <tendon>
+        <spatial name="rope1" width="0.002"  range="0.0 2.1" limited="true">
+            <site site="load_1" />
+            <site site="s1" />
+        </spatial>
+    </tendon>
+     <tendon>
+        <spatial name="rope2" width="0.002"  range="0.0 2.1" limited="true">
+            <site site="load_2" />
+            <site site="s2" />
+        </spatial>
+    </tendon>
+     <tendon>
+        <spatial name="rope3" width="0.002"  range="0.0 2.1" limited="true">
+            <site site="load_3" />
+            <site site="s3" />
+        </spatial>
+    </tendon>
+
+  <actuator>
+    <motor class="x2" name="thrust1_0" site="thrust1_0" gear="0 0 1 0 0 .0201"/>
+    <motor class="x2" name="thrust2_0" site="thrust2_0" gear="0 0 1 0 0 -.0201"/>
+    <motor class="x2" name="thrust3_0" site="thrust3_0" gear="0 0 1 0 0 .0201"/>
+    <motor class="x2" name="thrust4_0" site="thrust4_0" gear="0 0 1 0 0 -.0201"/>
+
+    <motor class="x2" name="thrust1_1" site="thrust1_1" gear="0 0 1 0 0 .0201"/>
+    <motor class="x2" name="thrust2_1" site="thrust2_1" gear="0 0 1 0 0 -.0201"/>
+    <motor class="x2" name="thrust3_1" site="thrust3_1" gear="0 0 1 0 0 .0201"/>
+    <motor class="x2" name="thrust4_1" site="thrust4_1" gear="0 0 1 0 0 -.0201"/>
+
+    <motor class="x2" name="thrust1_2" site="thrust1_2" gear="0 0 1 0 0 .0201"/>
+    <motor class="x2" name="thrust2_2" site="thrust2_2" gear="0 0 1 0 0 -.0201"/>
+    <motor class="x2" name="thrust3_2" site="thrust3_2" gear="0 0 1 0 0 .0201"/>
+    <motor class="x2" name="thrust4_2" site="thrust4_2" gear="0 0 1 0 0 -.0201"/>
+
+    <motor class="x2" name="thrust1_3" site="thrust1_3" gear="0 0 1 0 0 .0201"/>
+    <motor class="x2" name="thrust2_3" site="thrust2_3" gear="0 0 1 0 0 -.0201"/>
+    <motor class="x2" name="thrust3_3" site="thrust3_3" gear="0 0 1 0 0 .0201"/>
+    <motor class="x2" name="thrust4_3" site="thrust4_3" gear="0 0 1 0 0 -.0201"/>
+  </actuator>
+
+  <sensor>
+    <gyro name="body_gyro_0" site="imu_0"/>
+    <accelerometer name="body_linacc_0" site="imu_0"/>
+    <framequat name="body_quat_0" objtype="site" objname="imu_0"/>
+
+    <gyro name="body_gyro_1" site="imu_1"/>
+    <accelerometer name="body_linacc_1" site="imu_1"/>
+    <framequat name="body_quat_1" objtype="site" objname="imu_1"/>
+
+    <gyro name="body_gyro_2" site="imu_2"/>
+    <accelerometer name="body_linacc_2" site="imu_2"/>
+    <framequat name="body_quat_2" objtype="site" objname="imu_2"/>
+
+    <gyro name="body_gyro_3" site="imu_3"/>
+    <accelerometer name="body_linacc_3" site="imu_3"/>
+    <framequat name="body_quat_3" objtype="site" objname="imu_3"/>
+  </sensor>
+
+
+   
+  <!-- <keyframe>
+    <key name="hover" qpos="0 0 .3 1 0 0 0" ctrl="3.2495625 3.2495625 3.2495625 3.2495625"/>
+  </keyframe> -->
+</mujoco>
